@@ -1,0 +1,11 @@
+.notice {
+  font-size: .9rem;
+  position: relative;
+  &:before {
+    content: "*";
+    margin-left: 0.4rem;
+  }
+}
+.notice--primary {
+  color: $primary-color;
+}

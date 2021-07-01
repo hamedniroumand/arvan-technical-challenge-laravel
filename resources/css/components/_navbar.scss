@@ -1,0 +1,115 @@
+@mixin navbar {
+  $btn-height: 40px;
+  nav.main-nav {
+    z-index: 100;
+    padding: 1.2rem 0;
+    transition: background-color .4s;
+    @include responsive(lg) {
+      padding: 0;
+    }
+
+    .navbar {
+      color: #EEEEee;
+      display: flex;
+      justify-content: space-between;
+      //margin-top: 2rem;
+      @include responsive(lg) {
+        display: none;
+      }
+
+      &__right, &__left {
+        display: flex;
+        align-items: center;
+      }
+
+      &__items {
+        list-style: none;
+        display: flex;
+      }
+
+      &__item {
+        margin-right: 3rem;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      &__left {
+        .btn {
+          height: 40px;
+          &:not(:last-child) {
+            margin-left: 1.8rem;
+          }
+        }
+        .btn-primary {
+          background-color: lighten($primary-color-dark, 3);
+          &:hover {
+            background-color: $primary-color-dark;
+          }
+        }
+        .btn-primary:not(.btn-icon) {
+          width: 130px;
+          border-radius: 50px;
+        }
+        .btn-icon {
+          width: $btn-height;
+          border-radius: 50%;
+        }
+        .btn-secondary {
+          span {
+            margin-right: 0.6rem;
+            position: relative;
+
+            svg {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          &:nth-last-of-type(1) {
+            margin-left: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+  nav.main-nav.fixed {
+    position: fixed;
+    background-color: $primary-color;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+
+.navbar__mobile {
+  display: none;
+  .navbar__logo {
+    a {
+        height: 2.3rem;
+      display: block;
+      svg {
+        height: 100%;
+      }
+    }
+
+    span {
+      svg {
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+  @include responsive(lg) {
+    padding: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

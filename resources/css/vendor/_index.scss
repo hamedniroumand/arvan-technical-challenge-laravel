@@ -1,0 +1,56 @@
+@import "bootstrap/bootstrap-grid.rtl.min";
+@import "~@splidejs/splide/dist/css/splide.min";
+
+.container {
+  width:100%;
+  padding-right:15px;
+  padding-left:15px;
+  margin-right:auto;
+  margin-left:auto
+}
+@media (min-width:576px) {
+  .container {
+    max-width:540px
+  }
+}
+@media (min-width:768px) {
+  .container {
+    max-width:720px
+  }
+}
+@media (min-width:992px) {
+  .container {
+    max-width:960px
+  }
+}
+@media (min-width:1200px) {
+  .container {
+    max-width:1140px
+  }
+}
+
+.splide__arrow[disabled] {
+  display: none;
+}
+.splide__arrow {
+  transition: all 0.3s;
+  background-color: #D4E0EF;
+
+  svg {
+    width: .9em;
+    height: .9em;
+    path {
+      fill: white;
+    }
+  }
+  &:hover {
+    background-color: $primary-color;
+  }
+}
+
+.splide--rtl > .splide__arrows .splide__arrow--next, .splide--rtl > .splide__track > .splide__arrows .splide__arrow--next {
+  left: -1rem !important;
+}
+.splide--rtl > .splide__arrows .splide__arrow--prev, .splide--rtl > .splide__track > .splide__arrows .splide__arrow--prev {
+  right: -1rem !important;
+}

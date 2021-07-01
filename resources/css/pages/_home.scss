@@ -1,0 +1,47 @@
+section.projects {
+  background-color: $secondary-color-light;
+  padding: $sections-padding;
+}
+
+section.meeting-structure {
+  background-color: #EEF2F7;
+  padding: $sections-padding;
+}
+
+section.register-form {
+  padding: $sections-padding;
+  background-color: white;
+
+  .wrapper {
+    width: 80%;
+    margin: 0 auto;
+    @include responsive(md) {
+      width: 100%;
+    }
+  }
+}
+
+section.categories {
+  padding: $sections-padding;
+  background-color: $secondary-color;
+
+  &__info {
+    text-align: center;
+
+    .section-subtitle {
+      @include responsive(sm) {
+        text-align: justify;
+      }
+    }
+  }
+}
+
+section.success-projects {
+  padding: $sections-padding;
+  background-color: white;
+
+  .info {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}

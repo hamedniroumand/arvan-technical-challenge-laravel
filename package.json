@@ -1,0 +1,27 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "axios": "^0.21",
+        "laravel-mix": "^6.0.6",
+        "laravel-mix-handlebars": "^1.0.3",
+        "laravel-mix-purgecss": "^6.0.0",
+        "postcss": "^8.1.14",
+        "postcss-sorting": "^6.0.0",
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.35.1",
+        "sass-loader": "^12.1.0",
+        "svg-url-loader": "^7.1.1"
+    },
+    "dependencies": {
+        "@splidejs/splide": "^2.4.21"
+    }
+}

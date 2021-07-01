@@ -1,0 +1,22 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  transition: background-color 0.3s;
+  border-radius: 12px;
+  border: none;
+  width: 130px;
+  color: white;
+  &:hover {
+    background-color: $primary-color-dark;
+  }
+}
+.btn[disabled] {
+  background-color: $secondary-color;
+  color: #9DB0CB;
+}

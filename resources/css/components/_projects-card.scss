@@ -1,0 +1,352 @@
+$description-text-top: 2rem;
+section.projects {
+  .tabs {
+    margin-top: 3rem;
+    @include responsive(sm) {
+      max-width: 100vw;
+      overflow-x: auto;
+      margin-bottom: 1rem;
+    }
+
+    * {
+      font-size: 1rem;
+    }
+
+    ul {
+      display: flex;
+      @include responsive(sm) {
+        display: block ruby;
+        width: 100%;
+        overflow-x: auto;
+      }
+      li {
+        min-width: 7rem;
+        height: auto;
+        padding: 0.82rem 1rem;
+        background-color: #E7ECF4;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-left: 1rem;
+        }
+
+        @include responsive(sm) {
+          min-width: auto;
+          background-color: rgba(0, 186, 186, 0.15);
+          color: $primary-color;
+          border-radius: 12px;
+          overflow-y: hidden;
+          margin-left: 0 !important;
+        }
+
+        .tab-icon {
+          position: relative;
+          display: block;
+          width: 15px;
+          margin-left: 0.6rem;
+          svg {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            width: 15px;
+            path {
+              stroke: $text-color;
+            }
+          }
+        }
+      }
+
+      li.active {
+        background-color: white;
+        box-shadow: 0 -2px 4px #1ABBB026;
+        @include responsive(sm) {
+          box-shadow: none;
+          color: white;
+          background-color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .project-wrapper {
+    background-color: white;
+    padding: 2rem;
+
+    @include responsive(sm) {
+      background: none;
+      padding: 0;
+    }
+
+    &__list {
+      display: none;
+
+      .project-item {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+
+        &:not(.active):not(:last-child) {
+          border-bottom: 1px solid #D8E1EF;
+        }
+
+        @include responsive(sm) {
+          background-color: #E7ECF4;
+          border-radius: 10px;
+          border: none !important;
+        }
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+
+          .project-title {
+            font-size: 1rem;
+            @include responsive(sm) {
+              max-width: 75%;
+              width: 100%;
+              height: 100%;
+              display: block;
+              &:before {
+                content: unset;
+              }
+            }
+          }
+        }
+
+        &__content {
+          max-height: 0;
+          transition: max-height 0.3s;
+          overflow: hidden;
+
+          &--intro {
+            width: 85%;
+            @include responsive(md) {
+              width: 100%;
+            }
+            margin: 0 auto;
+
+            .box-col {
+              @include responsive(lg) {
+                margin-bottom: 1rem;
+              }
+              @include responsive(sm) {
+                padding: 0;
+              }
+
+              .project-content-box {
+                background-color: #F6F8FB;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 1.2rem;
+                border-radius: 10px;
+                min-height: 14rem;
+                height: 100%;
+
+                &__item {
+                  &:not(:first-child) {
+                    margin-top: 0.8rem;
+                  }
+                  &.title {
+                    font-weight: bold;
+                  }
+                }
+
+                &__item.subtitle {
+                  color: $secondary-color-dark;
+                }
+              }
+            }
+          }
+
+          &--description {
+            display: flex;
+            flex-direction: column;
+            margin: 2rem auto;
+            margin-top: 2rem + $description-text-top;
+            width: 75%;
+            @include responsive(md) {
+              margin-top: 2rem;
+            }
+            @include responsive(sm) {
+              padding: 1.2rem;
+              border-radius: 15px;
+              border: 1px solid #D8E1EF;
+
+            }
+
+            .description-header {
+              display: flex;
+              align-items: self-start;
+              @include responsive(md) {
+                align-items: flex-end;
+              }
+
+              .description-heading {
+                font-weight: 700;
+                font-size: 1.5rem;
+                margin-right: 1.5rem;
+                @include responsive(md) {
+                  margin: 0 0.5rem 0 0;
+                }
+              }
+            }
+
+            @include responsive(md) {
+              width: 100%;
+            }
+
+            .description-text {
+              position: relative;
+              margin-right: 70px;
+              top: -$description-text-top;
+              @include responsive(md) {
+                top: 0;
+                margin-top: 1.2rem;
+                margin-right: 0;
+              }
+
+              ul {
+                li {
+                  margin-top: 1rem;
+                }
+              }
+            }
+          }
+
+          &--cta {
+            width: 85%;
+            @include responsive(md) {
+              width: 100%;
+            }
+            margin: 0 auto;
+
+            .description-cta__item {
+              border: 2px solid $secondary-color;
+              border-radius: 10px;
+              padding: 1.2rem;
+              display: flex;
+              justify-content: space-between;
+
+              .main {
+                display: flex;
+                @include responsive(sm) {
+                  flex-direction: column;
+                }
+
+                .flex-col {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+                  margin-right: 1rem;
+                  @include responsive(md) {
+                    margin-right: 0;
+                    margin-top: 0.4rem;
+                  }
+
+                  .cta-title {
+                    font-size: 1.2rem;
+                    color: black;
+                    font-weight: 500;
+                  }
+                }
+              }
+
+              .author {
+                @include responsive(md) {
+                  display: none;
+                }
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                width: auto;
+                padding: 0.2rem 0.65rem;
+                border-radius: 15px;
+                border: 1px solid #D8E1EF;
+
+                p {
+                  font-size: 0.8rem;
+                }
+              }
+            }
+          }
+
+          .cta {
+            display: none;
+            @include responsive(sm) {
+              display: block;
+            }
+            margin-top: 1.4rem;
+            a {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .project-item.active {
+        border: 2px solid $primary-color;
+        border-radius: 10px;
+        box-shadow: 0px 3px 9px rgba(black, 0.09);
+
+        @include responsive(sm) {
+          background-color: white;
+          border: 2px solid $primary-color !important;
+        }
+
+        .project-item__content {
+          margin-top: 1.5rem;
+          max-height: 3000px;
+        }
+      }
+
+      .project-item.deactivated {
+        border: none !important;
+      }
+    }
+
+    &__list.active {
+      display: block;
+    }
+  }
+
+  .project-wrapper.active {
+    display: block;
+  }
+
+  .project-tabs-mobile {
+    display: none;
+    margin: 1.5rem 0;
+    * {
+      font-size: 1.1rem;
+    }
+    ul {
+      li {
+        background: rgba(0, 186, 186, 0.15);
+        margin-left: 1rem;
+        padding: .6rem 2.5rem;
+        border-radius: 10px;
+        color: $primary-color;
+
+        p {
+          font-weight: bold;
+        }
+      }
+      li.active {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}

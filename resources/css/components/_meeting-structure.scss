@@ -1,0 +1,155 @@
+.meeting-structure {
+
+  .info {
+    display: flex;
+    flex-direction: column;
+
+    &__head {
+      display: flex;
+      align-items: flex-end;
+    @include responsive(sm) {
+      align-items: center;
+    }
+      h2 {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .tabs {
+    margin-top: 2rem;
+    border-bottom: 1px solid #9DB0CB;
+    @include responsive(md) {
+      border: none !important;
+    }
+
+    * {
+      font-size: 1rem;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        padding: 0.6rem 0.85rem;
+        cursor: pointer;
+        text-align: center;
+      }
+
+      li.active {
+        border-bottom: 2px solid $primary-color;
+        @include responsive(md) {
+          border: none !important;
+        }
+      }
+    }
+  }
+
+  .container {
+    padding-top: .5rem;
+
+    .content-box {
+      position: relative;
+
+      .content-wrapper {
+        display: none;
+        background-color: white;
+        padding: 1.6rem;
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 1.5rem;
+        border: 2px solid $primary-color;
+        border-radius: 13px;
+        @include responsive(md) {
+          width: 100%;
+        }
+
+        .text-secondary {
+          color: $primary-color;
+        }
+
+        .paragraph {
+          margin: 0.8rem 0;
+        }
+
+        &:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background-color: white;
+          border: 2px solid $primary-color;
+          transform: rotate(45deg);
+          display: block;
+          position: absolute;
+          top: -5px;
+          border-bottom: none;
+          border-right: none;
+          @include responsive(sm) {
+            content: unset;
+          }
+        }
+
+        &:nth-child(1) {
+          &:before {
+            right: 15%;
+          }
+        }
+
+        &:nth-child(2) {
+          &:before {
+            right: 35%;
+          }
+        }
+
+        &:nth-child(3) {
+          &:before {
+            right: 60%;
+          }
+        }
+
+        &:nth-child(4) {
+          &:before {
+            right: 84%;
+          }
+        }
+
+      }
+
+      .content-wrapper.active {
+        display: block;
+      }
+
+    }
+  }
+
+  #meeting-tab-mobile {
+    display: none;
+    margin-top: 2rem;
+    padding: 0 15px;
+
+    * {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      li {
+        background: #D4DFEE;
+        margin-left: 1rem;
+        padding: .6rem 2.5rem;
+        border-radius: 10px;
+
+        p {
+          font-weight: bold;
+        }
+      }
+
+      li.active {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+  }
+}

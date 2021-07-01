@@ -1,0 +1,44 @@
+.expand-description {
+  cursor: pointer;
+}
+span.expand-description {
+  width: 25px;
+  height: 25px;
+  background-color: #E7ECF4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  @include responsive(sm) {
+    background-color: transparent;
+  }
+
+  svg {
+    transform: translate(-50%, -50%) rotate(90deg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.expand-description.active {
+  transition: background-color 0.3s, transform 0.5s;
+  &:hover {
+    background-color: $primary-color;
+    svg {
+      path {
+        stroke: white;
+      }
+    }
+  }
+  svg {
+    transform: translate(-50%, -50%) rotate(270deg);
+    top: 56%;
+    path {
+      stroke: #697D9A;
+    }
+  }
+}

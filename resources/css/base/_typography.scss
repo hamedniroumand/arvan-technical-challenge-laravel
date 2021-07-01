@@ -1,0 +1,83 @@
+h6 {
+  font-size: 1.2rem
+}
+
+h5 {
+  font-size: 1.4rem
+}
+
+h4 {
+  font-size: 1.6rem
+}
+
+h3 {
+  font-size: 1.8rem
+}
+
+h2 {
+  font-size: 2rem
+}
+
+h1 {
+  font-size: 2.1rem
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+.text-primary {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 80px;
+
+  @include responsive(sm) {
+    font-size: 3rem;
+  }
+}
+
+.text-secondary {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.heading-subtitle {
+  color: $primary-color;
+  font-size: 1.2rem;
+  @include responsive(sm) {
+    font-size: 1.5rem;
+  }
+}
+
+.text-subtitle {
+  margin-top: 1rem;
+  color: #5c5c5c;
+}
+
+.text-shadow {
+  text-shadow: $primary-color-dark 0.701px 4.132px 0px;
+}
+
+
+.section-info {
+  text-align: center;
+  @include responsive(sm) {
+    text-align: unset;
+    .section-title {
+      font-size: 1.6rem;
+    }
+  }
+  .section-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__section-subtitle {
+    margin-top: 1.5rem;
+    color: #5c5c5c;
+  }
+}

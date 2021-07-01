@@ -1,0 +1,59 @@
+.register-form {
+
+  .info {
+    margin-bottom: 2.4rem;
+  }
+
+  .form-content {
+    &__box {
+      background-color: $secondary-color;
+      @include responsive(sm) {
+        background-color: white;
+      }
+      padding: 1.5rem;
+      border-radius: 12px;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      &:after {
+        content: "";
+        width: 6px;
+        height: 40px;
+        background-color: $primary-color;
+        right: 1px;
+        top: 10px;
+        position: absolute;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      .box-title {
+        margin-bottom: 1.51rem;
+
+        * {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .form-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include responsive(sm) {
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0 1.5rem;
+      button {
+        margin-top: 0.7rem;
+        width: 100%;
+      }
+    }
+  }
+
+}

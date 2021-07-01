@@ -1,0 +1,335 @@
+.input, .textarea {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #DBE4F2;
+  padding: 0.4rem .7rem;
+  width: 82%;
+  font-family: $font-family;
+  @include responsive(sm) {
+    width: 75%;
+    margin-right: 0 !important;
+  }
+
+  &:not(.invalid):focus {
+    border-color: transparent;
+    box-shadow: 0 0 3px rgba(136, 141, 147, 0.7);
+    outline: none;
+  }
+
+  &:not(.invalid):focus-visible {
+    border-color: transparent;
+    box-shadow: 0 0 3px rgba(136, 141, 147, 0.7);
+    outline: none;
+  }
+}
+
+.input {
+  border: none;
+  &:focus, &:focus-visible {
+    @include responsive(sm) {
+      box-shadow: none !important;
+    }
+  }
+}
+
+.input-col {
+  &:not(:last-child) {
+    @include responsive(md) {
+      margin-bottom: 1.3rem;
+    }
+  }
+}
+
+.teaxtarea-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+
+  label {
+    @include responsive(sm) {
+      display: none;
+    }
+  }
+}
+
+.select {
+  background-color: #E7ECF4;
+  border-radius: 10px;
+  border: 1px solid #DBE4F2;
+  padding: 0.6rem .7rem;
+  width: 80%;
+
+  option {
+    background-color: white;
+
+    &:hover {
+      background-color: $secondary-color-light;
+      color: red;
+    }
+  }
+}
+
+.label {
+  display: block;
+  position: relative;
+  max-width: 25%;
+}
+
+.label.required {
+  &:after {
+    content: "*";
+    position: absolute;
+    left: -6px;
+    top: -6px;
+    color: $primary-color;
+  }
+}
+
+
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  @include responsive(sm) {
+    flex-wrap: wrap;
+    border-radius: 10px;
+    border: 1px solid #DBE4F2;
+    padding: 0.6rem 0.7rem;
+  }
+}
+
+.file-group {
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .input-notice {
+    display: block;
+    text-align: left;
+    font-size: 0.75rem;
+    color: #9DB0CB;
+
+    &:first-of-type {
+      margin-top: 0.5rem;
+    }
+  }
+
+  .input-error {
+    color: #F77D7D;
+    display: none;
+  }
+}
+
+.file-group.has-error {
+  .input-error {
+    display: block;
+  }
+}
+
+.select-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+  @include responsive(sm) {
+    flex-wrap: wrap;
+  }
+}
+
+.custom-textarea {
+  width: 90%;
+  @include responsive(lg) {
+    width: 80%;
+  }
+  @include responsive(sm) {
+    width: 100%;
+  }
+  resize: none;
+}
+
+
+.custom-select {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 14px;
+    transform: rotate(225deg);
+    width: 7px;
+    height: 7px;
+    border: 1px solid black;
+    border-right: none;
+    border-bottom: none;
+    top: 11px;
+  }
+
+  background-color: #E7ECF4;
+  border-radius: 10px;
+  border: 1px solid #DBE4F2;
+  padding: 0.6rem .7rem;
+  width: 80%;
+  min-height: 37.8px;
+  cursor: pointer;
+  @include responsive(sm) {
+    width: 100%;
+  }
+
+  p {
+    color: black;
+  }
+
+  &__item {
+    display: none;
+
+    input {
+      display: none;
+    }
+  }
+}
+
+.custom-select.active {
+  &:before {
+    transform: rotate(45deg);
+    top: 20px;
+  }
+
+  background-color: white;
+  border: 1.5px solid #D5DDE7;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  top: 0;
+  padding: 1rem;
+
+  p {
+    padding: 0.6rem;
+  }
+
+  .custom-select__item {
+    display: block;
+    border-radius: 6px;
+    padding: 0.6rem;
+
+    label {
+      cursor: pointer;
+      display: block;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: $secondary-color-light;
+      color: $primary-color;
+    }
+  }
+}
+
+.custom-file.selected {
+  border-color: $primary-color;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: $primary-color;
+  &:after {
+    border-color: $primary-color;
+    color: white;
+    background-color: $primary-color;;
+  }
+}
+
+.custom-file.error {
+  border-color: #FE5959;
+
+  &:after {
+    border-color: #FE5959;
+    color: white;
+  }
+}
+
+.custom-file {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #DBE4F2;
+  padding: 0.4rem .7rem;
+  width: 82%;
+  align-items: center;
+  display: flex;
+  @include responsive(sm) {
+    width: 100%;
+  }
+  min-height: 37.8px;
+  position: relative;
+  cursor: pointer;
+
+
+  &:hover {
+    border-color: $primary-color;
+    transition: all 0.3s;
+
+    &:after {
+      transition: all 0.3s;
+      border-color: $primary-color;
+      color: white;
+      background-color: $primary-color;
+    }
+  }
+
+  &:after {
+    content: "انتخاب فایل pdf";
+    background-color: #EEF2F7;
+    border: 1px solid #DBE4F2;
+    border-radius: 10px;
+    height: 37.8px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    transform: translateY(-50%);
+    color: #6A7D9B;
+  }
+}
+
+form {
+  .invalid {
+    border-color: $error-color;
+
+    &:after {
+      border-color: $error-color;
+      color: $error-color;
+    }
+  }
+}
+
+.form-result {
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  transform: scaleY(0);
+  @include responsive(sm) {
+    margin: 1rem 1.5rem 0 1.5rem;
+  }
+}
+
+.form-result-error {
+  transform: scaleY(1);
+  background: rgba($error-color, 0.05);
+  border: 1px solid darken($error-color, 25);
+  color: darken($error-color, 25);
+}
+
+.form-result-success {
+  transform: scaleY(1);
+  background: rgba($primary-color, 0.05);
+  border: 1px solid $primary-color-dark;
+  color: $primary-color-dark;
+}

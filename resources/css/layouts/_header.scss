@@ -1,0 +1,40 @@
+header {
+  background-color: $primary-color;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include navbar();
+}
+
+.header-title {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.header__footer {
+  position: relative;
+  margin-top: 6rem;
+
+  &--front {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    background-image: url("../../../public/images/city.svg");
+    height: 120px;
+    background-repeat: repeat-x;
+  }
+  &--back {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    background-position-x: 170px;
+    background-image: url("../../../public/images/city-back.svg");
+    opacity: 0.45;
+    height: 100px;
+    background-repeat: repeat-x;
+  }
+}
