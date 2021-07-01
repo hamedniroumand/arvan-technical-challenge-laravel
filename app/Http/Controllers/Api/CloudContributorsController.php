@@ -14,7 +14,7 @@ class CloudContributorsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            "fullname" => 'required|min:4|max:250',
+            "fullname" => 'required|min:3|max:250',
             "mobile" => 'required|numeric|regex:/(09)[0-9]{9}/|digits:11',
             "email" => 'required|email|max:800',
             "resume" => 'required|file|mimes:pdf|max:1024',
